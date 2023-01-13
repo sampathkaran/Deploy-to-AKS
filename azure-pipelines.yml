@@ -21,15 +21,15 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-    - task: Docker@2
-      inputs:
-        containerRegistry: 'sam-acr'
-        command: 'login'
+    # - task: Docker@2
+    #   inputs:
+    #     containerRegistry: 'sam-acr'
+    #     command: 'login'
     - task: Docker@2
       displayName: Build and push image
       inputs:
         containerRegistry: 'sam-acr'
-        repository: '$(imageRepo)'
+        repository: 'sampathkaran/$(imageRepo)'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
         tags: |
