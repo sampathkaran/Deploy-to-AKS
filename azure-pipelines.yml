@@ -38,7 +38,7 @@ stages:
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)/s/kubernetes'
-        artifact: 'my-manifest'
+        artifact: 'manifests'
         publishLocation: 'pipeline'
 
 - stage: Deploy
