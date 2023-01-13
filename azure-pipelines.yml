@@ -57,14 +57,14 @@ stages:
           buildType: 'current'
           artifactName: 'my-manifest'
           targetPath: '$(Pipeline.Workspace)/my-manifest'
-      - task: KubernetesManifest@0
-        inputs:
-          action: 'createSecret'
-          kubernetesServiceConnection: 'minkube'
-          namespace: 'default'
-          secretType: 'dockerRegistry'
-          secretName: '$(dockersecret)'
-          dockerRegistryEndpoint: 'sam-acr'
+      # - task: KubernetesManifest@0
+      #   inputs:
+      #     action: 'createSecret'
+      #     kubernetesServiceConnection: 'minkube'
+      #     namespace: 'default'
+      #     secretType: 'dockerRegistry'
+      #     secretName: '$(dockersecret)'
+      #     dockerRegistryEndpoint: 'sam-acr'
       - task: KubernetesManifest@0
         inputs:
           action: 'deploy'
