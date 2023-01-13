@@ -55,7 +55,7 @@ stages:
       - task: DownloadPipelineArtifact@2
         inputs:
           buildType: 'current'
-          artifactName: 'my-manifest'
+          artifactName: 'manifests'
           targetPath: '$(Pipeline.Workspace)/my-manifest'
       # - task: KubernetesManifest@0
       #   inputs:
@@ -71,7 +71,7 @@ stages:
           kubernetesServiceConnection: 'minkube'
           namespace: 'default'
           manifests: |
-            $(Pipeline.Workspace)/my-manifest/deployment.yaml
-            $(Pipeline.Workspace)/my-manifest/service.yaml
+            $(Pipeline.Workspace)/manifests/deployment.yaml
+            $(Pipeline.Workspace)/manifests/service.yaml
       
        
