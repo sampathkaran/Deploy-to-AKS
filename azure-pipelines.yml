@@ -68,7 +68,7 @@ stages:
       - task: KubernetesManifest@0
         inputs:
           action: 'deploy'
-          kubernetesServiceConnection: 'minkube'
+          kubernetesServiceConnection: 'eks-deploy'
           namespace: 'default'
           manifests: |
             $(Pipeline.Workspace)/manifests/deployment.yml
